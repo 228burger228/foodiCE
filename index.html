@@ -1,199 +1,697 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BERRY VELVET — премиальное мороженое. Закажи сейчас и получи рецепты вкусных коктейлей и десертов.">
+    <meta name="description" content="BERRY VELVET — премиальное мороженое с натуральными ягодами. Закажи сейчас с доставкой за 24 часа.">
     <meta property="og:title" content="BERRY VELVET — Премиальное мороженое">
     <meta property="og:description" content="Ежевика, голубика, кремовый вкус. Закажи сейчас с доставкой.">
     <title>BERRY VELVET — Премиальное мороженое</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                    <path d="M16 4C16 4 8 8 8 16C8 20.418 11.582 24 16 24C20.418 24 24 20.418 24 16C24 8 16 4 16 4Z" fill="#5A183E" opacity="0.9"/>
+                    <path d="M16 24V30" stroke="#5A183E" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M13 30H19" stroke="#5A183E" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="16" cy="14" r="3" fill="#FFFDF8" opacity="0.6"/>
+                </svg>
+                <span class="logo-text">BERRY <em>VELVET</em></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#flavors" class="nav-link">Вкусы</a></li>
+                <li><a href="#how-to-enjoy" class="nav-link">Как подавать</a></li>
+                <li><a href="#recipes" class="nav-link">Рецепты</a></li>
+                <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                <li><a href="#order" class="nav-link nav-link--order" data-modal="order-modal">Заказать</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner">
+        <p>При заказе от 2 стаканов — бесплатная доставка + эксклюзивный рецепт-бук в подарок</p>
+        <button class="promo-close" id="promo-close" aria-label="Закрыть">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+    </div>
+
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="home">
+        <div class="hero-bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-label">
-                    <span class="label-text">BERRY VELVET</span>
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Премиальное мороженое</span>
                 </div>
-                <h1 class="hero-title">Премиальное мороженое для вкусных моментов</h1>
-                <p class="hero-subtitle">Ежевика, голубика и нежный сливочный вкус встречаются в каждой ложке. Закажи сейчас и получи эксклюзивные рецепты коктейлей и десертов.</p>
-                <button class="cta-btn hero-cta" data-modal="order-modal">
-                    Заказать сейчас
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
+                <h1 class="hero-title">
+                    Вкус, который <em>остаётся</em> в памяти
+                </h1>
+                <p class="hero-subtitle">Ежевика, голубика и нежный сливочный вкус — в каждой ложке. Без искусственных добавок, только настоящее удовольствие.</p>
+                <div class="hero-actions">
+                    <button class="cta-btn hero-cta" data-modal="order-modal">
+                        Заказать сейчас
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <a href="#flavors" class="btn-ghost">Смотреть вкусы</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Рейтинг</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">2400+</span>
+                        <span class="stat-label">Клиентов</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">24ч</span>
+                        <span class="stat-label">Доставка</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="assets/ice-cream.png" alt="BERRY VELVET Premium Ice Cream" class="ice-cream-hero">
+            <div class="hero-visual">
+                <div class="hero-image-wrap">
+                    <div class="hero-glow"></div>
+                    <img src="assets/ice-cream.png" alt="BERRY VELVET Premium Ice Cream" class="ice-cream-hero">
+                    <div class="floating-tag tag-1">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="10" stroke="currentColor" fill="none"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A183E" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Натуральные ягоды</span>
+                    </div>
+                    <div class="floating-tag tag-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A183E" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span>Без консервантов</span>
+                    </div>
+                    <div class="floating-tag tag-3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5A183E" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <span>Топ продаж</span>
+                    </div>
+                </div>
                 <div class="berries-decoration">
                     <div class="berry berry-1"></div>
                     <div class="berry berry-2"></div>
                     <div class="berry berry-3"></div>
+                    <div class="berry berry-4"></div>
                 </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Листай ниже</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- FEATURES STRIP -->
+    <section class="features-strip">
+        <div class="features-inner">
+            <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 000 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+                <span>Натуральный состав</span>
+            </div>
+            <div class="feature-sep"></div>
+            <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Доставка за 24 часа</span>
+            </div>
+            <div class="feature-sep"></div>
+            <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Заморожено при −18°C</span>
+            </div>
+            <div class="feature-sep"></div>
+            <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+                <span>Подарочная упаковка</span>
+            </div>
+            <div class="feature-sep"></div>
+            <div class="feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                <span>Программа лояльности</span>
             </div>
         </div>
     </section>
 
-    <!-- HOW TO ENJOY SECTION -->
-    <section class="how-to-enjoy">
+    <!-- FLAVORS / MENU SECTION -->
+    <section class="flavors" id="flavors">
         <div class="container">
-            <h2 class="section-title">Как наслаждаться мороженым</h2>
-            <div class="cards-grid">
-                <div class="card card-1">
-                    <div class="card-number">01</div>
-                    <h3 class="card-title">Идеальная подача</h3>
-                    <p class="card-text">Подавай в охлажденной чашке с ягодами и мятой. Натрите над мороженым тёмный шоколад.</p>
+            <div class="section-header">
+                <span class="section-tag">Наш ассортимент</span>
+                <h2 class="section-title">Выбери свой вкус</h2>
+                <p class="section-desc">Каждый вкус — это история. Созданы с любовью, из лучших натуральных ингредиентов.</p>
+            </div>
+            <div class="flavor-tabs">
+                <button class="flavor-tab active" data-tab="all">Все</button>
+                <button class="flavor-tab" data-tab="berry">Ягодные</button>
+                <button class="flavor-tab" data-tab="cream">Кремовые</button>
+                <button class="flavor-tab" data-tab="exotic">Экзотика</button>
+            </div>
+            <div class="flavors-grid" id="flavors-grid">
+
+                <!-- Berry Velvet -->
+                <div class="flavor-card" data-category="berry">
+                    <div class="flavor-card-img">
+                        <img src="assets/Berry Velvet.jpg" alt="Berry Velvet" class="flavor-img">
+                        <div class="flavor-badge bestseller">Хит продаж</div>
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Berry Velvet</h3>
+                            <span class="flavor-price">299 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Ежевика, голубика и нежные сливки. Интенсивный ягодный вкус с кремовым финишем.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Ежевика</span>
+                            <span class="ftag">Голубика</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(248)</span>
+                            </div>
+                            <button class="btn-add" data-name="Berry Velvet" data-price="299">+ В корзину</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card card-2">
-                    <div class="card-number">02</div>
-                    <h3 class="card-title">Berry Velvet Shake</h3>
-                    <p class="card-text">Смешай мороженое с холодным молоком и добавь ликёр. Укрась взбитыми сливками.</p>
+
+                <!-- Vanilla Dream -->
+                <div class="flavor-card" data-category="cream">
+                    <div class="flavor-card-img">
+                        <img src="assets/Vanilla Dream.jpg" alt="Vanilla Dream" class="flavor-img">
+                        <div class="flavor-badge new">Новинка</div>
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Vanilla Dream</h3>
+                            <span class="flavor-price">279 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Мадагаскарская ваниль и двойные сливки. Классика в премиальном исполнении.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Ваниль</span>
+                            <span class="ftag">Сливки</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(183)</span>
+                            </div>
+                            <button class="btn-add" data-name="Vanilla Dream" data-price="279">+ В корзину</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card card-3">
-                    <div class="card-number">03</div>
-                    <h3 class="card-title">Кофейный напиток</h3>
-                    <p class="card-text">Положи шарик мороженого в чашку с горячим эспрессо. Идеальный аффогато.</p>
+
+                <!-- Dark Cherry -->
+                <div class="flavor-card" data-category="berry">
+                    <div class="flavor-card-img">
+                        <img src="assets/Dark Cherry.jpg" alt="Dark Cherry" class="flavor-img">
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Dark Cherry</h3>
+                            <span class="flavor-price">319 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Тёмная вишня с шоколадными вкраплениями. Насыщенный, чуть терпкий вкус взрослого десерта.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Вишня</span>
+                            <span class="ftag">Шоколад</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(97)</span>
+                            </div>
+                            <button class="btn-add" data-name="Dark Cherry" data-price="319">+ В корзину</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card card-4">
-                    <div class="card-number">04</div>
-                    <h3 class="card-title">Парфе за 5 минут</h3>
-                    <p class="card-text">Слойный десерт: мороженое, печенье, ягоды. Впечатляет гостей.</p>
+
+                <!-- Mango Breeze -->
+                <div class="flavor-card" data-category="exotic">
+                    <div class="flavor-card-img">
+                        <img src="assets/Mango Breeze.jpg" alt="Mango Breeze" class="flavor-img">
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Mango Breeze</h3>
+                            <span class="flavor-price">329 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Тайский манго и кокосовое молоко. Тропическое лето в каждой ложке.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Манго</span>
+                            <span class="ftag">Кокос</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(142)</span>
+                            </div>
+                            <button class="btn-add" data-name="Mango Breeze" data-price="329">+ В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pistachio Royal -->
+                <div class="flavor-card" data-category="cream">
+                    <div class="flavor-card-img">
+                        <img src="assets/Pistachio Royal.jpg" alt="Pistachio Royal" class="flavor-img">
+                        <div class="flavor-badge limited">Лимитед</div>
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Pistachio Royal</h3>
+                            <span class="flavor-price">349 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Сицилийские фисташки и белый шоколад. Орехово-кремовый вкус с хрустящими кусочками.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Фисташки</span>
+                            <span class="ftag">Бел. шоколад</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(76)</span>
+                            </div>
+                            <button class="btn-add" data-name="Pistachio Royal" data-price="349">+ В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passion Fruit -->
+                <div class="flavor-card" data-category="exotic">
+                    <div class="flavor-card-img">
+                        <img src="assets/Passion Fruit.jpg" alt="Passion Fruit" class="flavor-img">
+                    </div>
+                    <div class="flavor-card-body">
+                        <div class="flavor-header">
+                            <h3>Passion Fruit</h3>
+                            <span class="flavor-price">339 ₽</span>
+                        </div>
+                        <p class="flavor-desc">Маракуйя с нотками лайма. Кисло-сладкий взрыв тропических эмоций.</p>
+                        <div class="flavor-tags">
+                            <span class="ftag">Маракуйя</span>
+                            <span class="ftag">Лайм</span>
+                        </div>
+                        <div class="flavor-footer">
+                            <div class="flavor-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(59)</span>
+                            </div>
+                            <button class="btn-add" data-name="Passion Fruit" data-price="339">+ В корзину</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CART BAR -->
+    <div class="cart-bar" id="cart-bar">
+        <div class="cart-bar-inner">
+            <div class="cart-info">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+                <span id="cart-count">0</span> позиции · <strong id="cart-total">0 ₽</strong>
+            </div>
+            <button class="cta-btn cart-checkout" data-modal="order-modal">
+                Оформить заказ
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- HOW TO ENJOY SECTION -->
+    <section class="how-to-enjoy" id="how-to-enjoy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Идеи подачи</span>
+                <h2 class="section-title">Как наслаждаться мороженым</h2>
+            </div>
+            <div class="enjoy-grid">
+                <div class="enjoy-card">
+                    <div class="enjoy-num">01</div>
+                    <div class="enjoy-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <h3>Идеальная подача</h3>
+                    <p>Подавай в охлажденной чашке с ягодами и мятой. Натрите над мороженым тёмный шоколад.</p>
+                </div>
+                <div class="enjoy-card">
+                    <div class="enjoy-num">02</div>
+                    <div class="enjoy-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 6h8l1 12H7L8 6z"/><path d="M5 6h14"/><path d="M10 3h4"/></svg>
+                    </div>
+                    <h3>Berry Velvet Shake</h3>
+                    <p>Смешай мороженое с холодным молоком и добавь ликёр. Укрась взбитыми сливками.</p>
+                </div>
+                <div class="enjoy-card">
+                    <div class="enjoy-num">03</div>
+                    <div class="enjoy-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><path d="M7 2c0 2-2 3-2 5"/><path d="M11 2c0 2-2 3-2 5"/></svg>
+                    </div>
+                    <h3>Кофейный аффогато</h3>
+                    <p>Положи шарик в чашку с горячим эспрессо. Контраст холодного и горячего — это магия.</p>
+                </div>
+                <div class="enjoy-card">
+                    <div class="enjoy-num">04</div>
+                    <div class="enjoy-icon-wrap">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 19h18"/><path d="M5 19V9a7 7 0 0114 0v10"/><path d="M9 19v-6"/><path d="M15 19v-6"/></svg>
+                    </div>
+                    <h3>Парфе за 5 минут</h3>
+                    <p>Слойный десерт: мороженое, печенье, ягоды. Всегда впечатляет гостей.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- RECIPES SECTION -->
-    <section class="recipes">
+    <section class="recipes" id="recipes">
         <div class="container">
-            <h2 class="section-title">Эксклюзивные рецепты</h2>
+            <div class="section-header">
+                <span class="section-tag">Готовь дома</span>
+                <h2 class="section-title">Эксклюзивные рецепты</h2>
+                <p class="section-desc">Получи полный рецепт-бук при заказе — 15 уникальных десертов с BERRY VELVET</p>
+            </div>
             <div class="recipes-grid">
                 <div class="recipe-card">
-                    <div class="recipe-image recipe-1"></div>
-                    <h3>Berry Velvet Shake</h3>
-                    <p class="recipe-time">⏱️ 5 минут</p>
-                    <ul class="recipe-ingredients">
-                        <li>2 шарика BERRY VELVET</li>
-                        <li>200 мл холодного молока</li>
-                        <li>30 мл Амаретто</li>
-                        <li>Взбитые сливки</li>
-                        <li>Тёмный шоколад</li>
-                    </ul>
+                    <div class="recipe-visual" style="background-image: url('assets/menu1.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-time">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                5 мин
+                            </span>
+                            <span class="recipe-diff easy">Просто</span>
+                        </div>
+                        <h3>Berry Velvet Shake</h3>
+                        <ul class="recipe-ingredients">
+                            <li>2 шарика BERRY VELVET</li>
+                            <li>200 мл холодного молока</li>
+                            <li>30 мл Амаретто</li>
+                            <li>Взбитые сливки + шоколад</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="recipe-card recipe-card--featured">
+                    <div class="recipe-visual" style="background-image: url('assets/menu2.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-time">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                3 мин
+                            </span>
+                            <span class="recipe-diff easy">Просто</span>
+                        </div>
+                        <h3>Аффогато Премиум</h3>
+                        <ul class="recipe-ingredients">
+                            <li>1 шарик BERRY VELVET</li>
+                            <li>60 мл горячего эспрессо</li>
+                            <li>Печенье амаретти</li>
+                            <li>Свежая мята</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="recipe-card">
-                    <div class="recipe-image recipe-2"></div>
-                    <h3>Аффогато премиум</h3>
-                    <p class="recipe-time">⏱️ 3 минуты</p>
-                    <ul class="recipe-ingredients">
-                        <li>1 шарик BERRY VELVET</li>
-                        <li>60 мл эспрессо</li>
-                        <li>Печенье амаретти</li>
-                        <li>Свежая мята</li>
-                    </ul>
+                    <div class="recipe-visual" style="background-image: url('assets/menu3.jpg'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-time">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                10 мин
+                            </span>
+                            <span class="recipe-diff medium">Средне</span>
+                        </div>
+                        <h3>Ягодное Парфе</h3>
+                        <ul class="recipe-ingredients">
+                            <li>3 шарика BERRY VELVET</li>
+                            <li>Печенье (50 г)</li>
+                            <li>Свежие ягоды (50 г)</li>
+                            <li>Греческий йогурт + мёд</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="recipe-card">
-                    <div class="recipe-image recipe-3"></div>
-                    <h3>Ягодное парфе</h3>
-                    <p class="recipe-time">⏱️ 10 минут</p>
-                    <ul class="recipe-ingredients">
-                        <li>3 шарика BERRY VELVET</li>
-                        <li>Печенье (50 г)</li>
-                        <li>Свежие ягоды (50 г)</li>
-                        <li>Йогурт (100 мл)</li>
-                        <li>Мёд для сиропа</li>
-                    </ul>
+            </div>
+            <div class="recipes-cta">
+                <button class="cta-btn" data-modal="order-modal">
+                    Получить все 15 рецептов
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <span class="cta-note">Бесплатно при любом заказе</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY BERRY VELVET -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-visual">
+                    <div class="why-img-wrap">
+                        <div class="why-glow"></div>
+                        <img src="assets/Berry Velvet.jpg" alt="BERRY VELVET" class="why-img">
+                    </div>
+                </div>
+                <div class="why-content">
+                    <span class="section-tag">Наше качество</span>
+                    <h2>Почему выбирают<br><em>BERRY VELVET?</em></h2>
+                    <div class="why-list">
+                        <div class="why-item">
+                            <div class="why-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                            </div>
+                            <div>
+                                <h4>Натуральные ягоды</h4>
+                                <p>Ежевика и голубика из фермерских хозяйств. Никаких концентратов.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Кремовая текстура</h4>
+                                <p>Технология slow-churn создаёт исключительно нежную и тающую текстуру.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                            </div>
+                            <div>
+                                <h4>Без искусственных добавок</h4>
+                                <p>Состав из 7 ингредиентов. Никаких E-шек, красителей и усилителей.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Холодная доставка за 24ч</h4>
+                                <p>Специальная криоупаковка держит температуру до 48 часов.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="cta-btn" data-modal="order-modal" style="margin-top: 2rem;">
+                        Попробовать сейчас
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCT INFO SECTION -->
-    <section class="product-info">
+    <!-- WEB BANNERS SECTION -->
+    <section class="banners-section">
         <div class="container">
-            <div class="product-info-content">
-                <div class="product-image-wrapper">
-                    <img src="assets/ice-cream.png" alt="BERRY VELVET Ice Cream" class="product-image">
+            <div class="banners-grid">
+                <div class="banner-item banner-item--main">
+                    <img src="assets/web2 (2).jpg" alt="BERRY VELVET реклама" class="banner-img">
                 </div>
-                <div class="product-details">
-                    <h2>Почему выбирают BERRY VELVET?</h2>
-                    <div class="details-list">
-                        <div class="detail-item">
-                            <span class="detail-icon">🫐</span>
-                            <div>
-                                <h4>Натуральные ягоды</h4>
-                                <p>Ежевика и голубика из лучших хозяйств</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon">🥄</span>
-                            <div>
-                                <h4>Кремовая текстура</h4>
-                                <p>Мягкое, тающее мороженое премиум качества</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon">✨</span>
-                            <div>
-                                <h4>Без искусственных добавок</h4>
-                                <p>Только натуральные ингредиенты</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-icon">🚚</span>
-                            <div>
-                                <h4>Быстрая доставка</h4>
-                                <p>Привезём холодным за 24 часа</p>
-                            </div>
+                <div class="banner-item banner-item--wide">
+                    <img src="assets/web2 (3).jpg" alt="BERRY VELVET реклама" class="banner-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Отзывы</span>
+                <h2 class="section-title">Что говорят клиенты</h2>
+                <p class="section-desc">Более 2400 довольных покупателей по всей России</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #7657B5, #5A183E);">А</div>
+                        <div>
+                            <div class="reviewer-name">Анна К.</div>
+                            <div class="review-stars">★★★★★</div>
                         </div>
                     </div>
+                    <p class="review-text">"Заказала впервые по совету подруги — теперь беру каждую неделю. Berry Velvet — это что-то особенное, вкус настоящих ягод, не химии."</p>
+                    <span class="review-product">Купила: Berry Velvet × 2</span>
+                </div>
+                <div class="review-card review-card--featured">
+                    <div class="review-top">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #3E548C, #7657B5);">М</div>
+                        <div>
+                            <div class="reviewer-name">Михаил Р.</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Взял Pistachio Royal и Mango Breeze — оба просто шедевры. Рецепты из бонусного буклета тоже огонь, особенно аффогато. Спасибо!"</p>
+                    <span class="review-product">Купил: Pistachio Royal + Mango Breeze</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #5A183E, #8B0000);">С</div>
+                        <div>
+                            <div class="reviewer-name">Светлана Г.</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Доставка пришла вовремя, мороженое идеально холодное. Dark Cherry — лучший выбор для вечера с бокалом вина. Буду заказывать ещё!"</p>
+                    <span class="review-product">Купила: Dark Cherry × 4</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #c87a15, #E74C3C);">Д</div>
+                        <div>
+                            <div class="reviewer-name">Дмитрий В.</div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Заказал набор из 6 стаканов на день рождения жены — все гости были в восторге. Особенно зашел Vanilla Dream. Упаковка шикарная!"</p>
+                    <span class="review-product">Купил: Премиум набор × 6</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ORDER SECTION -->
-    <section class="order-section">
+    <section class="order-section" id="order">
         <div class="container">
-            <div class="order-block">
-                <h2>Готов попробовать?</h2>
-                <p class="order-subtitle">Заполни форму и мы доставим мороженое прямо к тебе</p>
-                <form class="order-form" id="order-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" class="form-input" name="name" required>
+            <div class="order-wrapper">
+                <div class="order-left">
+                    <span class="section-tag">Заказ</span>
+                    <h2>Готов попробовать?</h2>
+                    <p>Оформи заказ прямо сейчас и получи доставку за 24 часа + эксклюзивный рецепт-бук</p>
+                    <div class="order-perks">
+                        <div class="perk">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Бесплатная доставка от 2 шт.
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" class="form-input" name="email" required>
+                        <div class="perk">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+                            Рецепт-бук в подарок
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="tel" placeholder="Телефон" class="form-input" name="phone" required>
+                        <div class="perk">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+                            Криоупаковка включена
                         </div>
-                        <div class="form-group">
-                            <select class="form-input" name="quantity" required>
-                                <option value="">Выберите количество</option>
-                                <option value="1">1 стакан</option>
-                                <option value="2">2 стакана</option>
-                                <option value="4">4 стакана (коробка)</option>
-                                <option value="6">6 стаканов (премиум набор)</option>
-                            </select>
+                        <div class="perk">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                            Поддержка 24/7
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Адрес доставки" class="form-input" name="address" required>
+                </div>
+                <div class="order-right">
+                    <form class="order-form" id="order-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Ваше имя</label>
+                                <input type="text" placeholder="Иван Иванов" class="form-input" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" placeholder="ivan@mail.ru" class="form-input" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Телефон</label>
+                                <input type="tel" placeholder="+7 (999) 000-00-00" class="form-input" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Количество</label>
+                                <select class="form-input" name="quantity" required>
+                                    <option value="">Выберите...</option>
+                                    <option value="1">1 стакан — 299 ₽</option>
+                                    <option value="2">2 стакана — 598 ₽ · бесплатная доставка</option>
+                                    <option value="4">4 стакана — 1 196 ₽ · подарок</option>
+                                    <option value="6">6 стаканов — 1 494 ₽ · выгодно</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Адрес доставки</label>
+                            <input type="text" placeholder="г. Москва, ул. Пушкина, д. 1" class="form-input" name="address" required>
+                        </div>
+                        <button type="submit" class="cta-btn form-submit-btn">
+                            Заказать и получить рецепты
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                        <p class="form-notice">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                            Данные защищены. Рецепты придут на email после заказа.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR / MEDIA SECTION -->
+    <section class="qr-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Смотри рекламу</span>
+                <h2 class="section-title">Наши видеоролики</h2>
+                <p class="section-desc">Отсканируй QR-код и посмотри анимированные ролики BERRY VELVET на YouTube</p>
+            </div>
+            <div class="qr-grid">
+                <div class="qr-card">
+                    <div class="qr-img-wrap">
+                        <img src="assets/qrcod_hmbv 2.png" alt="QR код Berry Velvet ролик" class="qr-img">
                     </div>
-                    <button type="submit" class="cta-btn" style="width: 100%; justify-content: center; margin-top: 1rem;">
-                        Заказать и получить рецепты
-                    </button>
-                </form>
-                <p class="form-notice">Бесплатные рецепты придут на email после заказа</p>
+                    <div class="qr-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Berry Velvet — видеоролик
+                    </div>
+                </div>
+                <div class="qr-card">
+                    <div class="qr-img-wrap">
+                        <img src="assets/qrcod_hmgo 1.png" alt="QR код Mango ролик" class="qr-img">
+                    </div>
+                    <div class="qr-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Mango Breeze — видеоролик
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -201,19 +699,61 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-top">
                 <div class="footer-brand">
-                    <h3>BERRY VELVET</h3>
-                    <p>Премиальное мороженое</p>
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                            <path d="M16 4C16 4 8 8 8 16C8 20.418 11.582 24 16 24C20.418 24 24 20.418 24 16C24 8 16 4 16 4Z" fill="rgba(255,255,255,0.3)"/>
+                            <path d="M16 24V30" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M13 30H19" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>BERRY <em>VELVET</em></span>
+                    </div>
+                    <p class="footer-tagline">Премиальное мороженое<br>из натуральных ягод</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a href="https://t.me/berryvelvet" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" stroke-linecap="round"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                        </a>
+                        <a href="https://vk.com" target="_blank" rel="noopener noreferrer" class="social-link" title="VKontakte">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18" stroke-linecap="round"><path d="M2 7h4c.5 4 2 7 4 8M2 7c0 0 0 9 8 11M22 7h-4c-.5 4-2 7-4 8M22 7c0 0 0 9-8 11M10 15c0 0 1 3 2 3s2-3 2-3"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">📱</a>
-                    <a href="https://t.me" target="_blank" rel="noopener noreferrer" title="Telegram">✈️</a>
-                    <a href="mailto:order@berryvelvet.com">✉️</a>
+                <div class="footer-nav">
+                    <div class="footer-col">
+                        <h4>Продукты</h4>
+                        <ul>
+                            <li><a href="#flavors">Berry Velvet</a></li>
+                            <li><a href="#flavors">Vanilla Dream</a></li>
+                            <li><a href="#flavors">Dark Cherry</a></li>
+                            <li><a href="#flavors">Mango Breeze</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Страницы</h4>
+                        <ul>
+                            <li><a href="#how-to-enjoy">Как подавать</a></li>
+                            <li><a href="#recipes">Рецепты</a></li>
+                            <li><a href="#reviews">Отзывы</a></li>
+                            <li><a href="#order">Заказать</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Контакты</h4>
+                        <ul>
+                            <li><a href="mailto:order@berryvelvet.com">order@berryvelvet.com</a></li>
+                            <li><a href="tel:+78001234567">8 800 123-45-67</a></li>
+                            <li class="footer-hours">Пн–Вс: 9:00–21:00</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 BERRY VELVET. Премиальное мороженое.</p>
+                <p>&copy; 2025 BERRY VELVET. Все права защищены.</p>
+                <p class="footer-credits">Сделано с любовью и ягодами</p>
             </div>
         </div>
     </footer>
@@ -222,36 +762,63 @@
     <div id="order-modal" class="modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" data-close="order-modal">✕</button>
-            <h2>Заказать BERRY VELVET</h2>
-            <p>Выбери количество и получи доставку за 24 часа</p>
+            <button class="modal-close" data-close="order-modal" aria-label="Закрыть">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <div class="modal-header">
+                <svg class="modal-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                    <path d="M16 4C16 4 8 8 8 16C8 20.418 11.582 24 16 24C20.418 24 24 20.418 24 16C24 8 16 4 16 4Z" fill="#5A183E"/>
+                    <path d="M16 24V30" stroke="#5A183E" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M13 30H19" stroke="#5A183E" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h2>Заказать BERRY VELVET</h2>
+                <p>Доставка за 24 часа · Рецепт-бук в подарок</p>
+            </div>
             <form class="modal-form" id="modal-order-form">
                 <div class="form-group">
+                    <label class="form-label">Имя</label>
                     <input type="text" placeholder="Ваше имя" class="form-input" name="name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Email" class="form-input" name="email" required>
+                    <label class="form-label">Email</label>
+                    <input type="email" placeholder="Email для рецептов" class="form-input" name="email" required>
                 </div>
                 <div class="form-group">
-                    <input type="tel" placeholder="Телефон" class="form-input" name="phone" required>
+                    <label class="form-label">Телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" class="form-input" name="phone" required>
                 </div>
                 <div class="form-group">
+                    <label class="form-label">Количество</label>
                     <select class="form-input" name="quantity" required>
-                        <option value="">Выберите количество</option>
-                        <option value="1">1 стакан - 299 ₽</option>
-                        <option value="2">2 стакана - 598 ₽</option>
-                        <option value="4">4 стакана (коробка) - 1196 ₽</option>
-                        <option value="6">6 стаканов (премиум набор) - 1794 ₽</option>
+                        <option value="">Выберите...</option>
+                        <option value="1">1 стакан — 299 ₽</option>
+                        <option value="2">2 стакана — 598 ₽ · доставка бесплатно</option>
+                        <option value="4">4 стакана — 1 196 ₽ · подарок</option>
+                        <option value="6">6 стаканов — 1 494 ₽ · выгодно</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Адрес доставки" class="form-input" name="address" required>
+                    <label class="form-label">Адрес доставки</label>
+                    <input type="text" placeholder="Город, улица, дом" class="form-input" name="address" required>
                 </div>
-                <button type="submit" class="cta-btn" style="width: 100%; justify-content: center;">
+                <button type="submit" class="cta-btn" style="width:100%; justify-content:center;">
                     Заказать сейчас
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </button>
             </form>
-            <p class="form-notice">Рецепты придут на email после заказа</p>
+            <p class="form-notice">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Данные защищены. Рецепты придут на email.
+            </p>
+        </div>
+    </div>
+
+    <!-- SUCCESS TOAST -->
+    <div id="toast" class="toast">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div>
+            <strong>Заказ принят!</strong>
+            <p>Рецепты уже летят на ваш email</p>
         </div>
     </div>
 
